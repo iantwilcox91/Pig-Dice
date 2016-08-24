@@ -1,5 +1,7 @@
 // buisness logic
-var X = 0
+var curPtsVar = 0
+var plr1PtsTotal = 0
+var plr2PtsTotal = 0
 function diceRoll(){
   var rollResult = Math.floor((Math.random() * 6) + 1);
   return rollResult ;
@@ -12,18 +14,29 @@ function postCurrentRoll(index){
   $("ul").append("<li>" + index + "</li>");
 }
 function totalCurrentPoints(i) {
-  X = X+i;
-  $(".CurPts").text(X);
+  curPtsVar = curPtsVar+i;
+  $(".CurPts").text(curPtsVar);
 }
 function rolledOne(i) {
   if (i === 1){
-    X = 0;
-    $(".CurPts").text(X);
+    curPtsVar = 0;
+    $(".CurPts").text(curPtsVar);
     $("ul").empty();
     // switch player display
   }
 }
 
+
+function sumPts() {
+  // target turn player
+  plr1PtsTotal = curPtsVar+plr1PtsTotal;
+  $(".plr1").text(plr1PtsTotal);
+  curPtsVar = 0;
+  $(".CurPts").text(curPtsVar);
+  $("ul").empty();
+  // switch player display
+
+}
 
 
 // front end logic
@@ -41,8 +54,10 @@ $(document).ready(function() {
     totalCurrentPoints(numRolled);
     rolledOne(numRolled)
   });
-
-
+  $("#PASSbtn").click(function() {
+    sumPts();
+    // switch player display
+  });
 
 
 
