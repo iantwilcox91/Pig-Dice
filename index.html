@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css" media="screen" title="no title" charset="utf-8">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" ></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <meta charset="utf-8">
+    <title>PIG GAME</title>
+  </head>
+  <body>
+<div class="jumbotron">
+  PIG GAME
+</div>
+    <div class="container row col-sm-4">
+      <h1>
+        Player One
+      </h1>
+      <form class="form-group" id="player1name">
+        <input type="text" placeholder="enter your name:">
+      </form>
+      <p> Points Total:</p>
+      <p class="box"> = </p>
+      <br>
+      <div class="turnP1">
+        <h3>Its your turn</h3>
+        <p>current rolls:</p>
+        <ul>
+          rolls
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <p>
+        <img src="dice/dice1.png" alt="dice1"/>
+    <!-- src= <"dice/dice"> + #roll# + <".png"> -->
+    <!-- empty() -> append()   -->
+      </p>
+      <button type="button" class="btn btn-primary btn-lg">ROLL</button>
+      <button type="button" class="btn btn-danger btn-lg">PASS</button>
+      <br>
+      <br>
+      <p> current points:</p>
+      <p class="box"> = 7 </p>
+
+    </div>
+    <div class="col-sm-4">
+      <h1>Player Two</h1>
+      <form class="form-group" id="player2name">
+        <input type="text" placeholder="enter your name:">
+      </form>
+      <p> Points Total:</p>
+      <p class="box"> = </p>
+      <div class="turnP2">
+        <h3>Its your turn</h3>
+        <p>current rolls:</p>
+        <ul>
+          <li>3</li>
+          <li>2</li>
+          <li>2</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
