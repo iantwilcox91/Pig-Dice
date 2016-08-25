@@ -2,6 +2,7 @@
 var curPtsVar = 0
 var plr1PtsTotal = 0
 var plr2PtsTotal = 0
+var whosTurn = 1
 function diceRoll(){
   var rollResult = Math.floor((Math.random() * 6) + 1);
   return rollResult ;
@@ -22,21 +23,37 @@ function rolledOne(i) {
     curPtsVar = 0;
     $(".CurPts").text(curPtsVar);
     $("ul").empty();
-    // switch player display
+    changeTurn();
   }
 }
 
 
 function sumPts() {
-  // target turn player
-  plr1PtsTotal = curPtsVar+plr1PtsTotal;
-  $(".plr1").text(plr1PtsTotal);
+  if(whosTurn === 1){
+    plr1PtsTotal = curPtsVar+plr1PtsTotal;
+    $(".plr1").text(plr1PtsTotal);
+  }else if (whosTurn === 2) {
+    plr2PtsTotal = curPtsVar+plr2PtsTotal;
+    $(".plr2").text(plr2PtsTotal);
+  }
   curPtsVar = 0;
   $(".CurPts").text(curPtsVar);
   $("ul").empty();
-  // switch player display
-
 }
+
+function changeTurn(){
+  if(whosTurn === 2){
+    whosTurn = 1;
+    alert("its player ones turn")
+  }else{
+    whosTurn = 2;
+    alert("its player twos turn")
+  }
+}
+
+
+
+
 
 
 // front end logic
@@ -52,11 +69,13 @@ $(document).ready(function() {
     dicePicture(numRolled);
     postCurrentRoll(numRolled);
     totalCurrentPoints(numRolled);
-    rolledOne(numRolled)
+    rolledOne(numRolled);
+    console.log("CURRENT PLAYER IS PLAYER " + whosTurn);
   });
   $("#PASSbtn").click(function() {
     sumPts();
-    // switch player display
+    changeTurn();
+    console.log("CURRENT PLAYER IS PLAYER " + whosTurn);
   });
 
 
