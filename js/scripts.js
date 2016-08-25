@@ -61,14 +61,14 @@ function hideNotTurn() {
 }
 
 function winner(){
-  if(plr1PtsTotal > 15){
+  if(plr1PtsTotal > 99){
     var name = $("input.player1name").val().toUpperCase();
 
     $(".gameDisplay").hide();
     $(".restart").show();
     $(".restart h1").text(name + " You Are the WINNER!!!!!");
   }
-  if(plr2PtsTotal > 15){
+  if(plr2PtsTotal > 99){
     var name = $("input.player2name").val().toUpperCase();
 
     $(".gameDisplay").hide();
