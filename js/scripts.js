@@ -9,7 +9,7 @@ function diceRoll(){
 }
 function dicePicture(index) {
   var string = "dice/dice" + index + ".png";
-  $("img").attr("src", string);
+  $(".diceImg").attr("src", string);
 }
 function postCurrentRoll(index){
   $("ul").append("<li>" + index + "</li>");
@@ -44,13 +44,38 @@ function sumPts() {
 function changeTurn(){
   if(whosTurn === 2){
     whosTurn = 1;
-    alert("its player ones turn")
   }else{
     whosTurn = 2;
-    alert("its player twos turn")
+  }
+  hideNotTurn()
+}
+
+function hideNotTurn() {
+  if(whosTurn === 2){
+    $(".turnP1").toggle();
+    $(".turnP2").toggle();
+  }else{
+    $(".turnP2").toggle();
+    $(".turnP1").toggle();
   }
 }
 
+function winner(){
+  if(plr1PtsTotal > 15){
+    var name = $("input.player1name").val().toUpperCase();
+
+    $(".gameDisplay").hide();
+    $(".restart").show();
+    $(".restart h1").text(name + " You Are the WINNER!!!!!");
+  }
+  if(plr2PtsTotal > 15){
+    var name = $("input.player2name").val().toUpperCase();
+
+    $(".gameDisplay").hide();
+    $(".restart").show();
+    $(".restart h1").text(name + " You Are the WINNER!!!!!");
+  }
+}
 
 
 
@@ -70,16 +95,25 @@ $(document).ready(function() {
     postCurrentRoll(numRolled);
     totalCurrentPoints(numRolled);
     rolledOne(numRolled);
-    console.log("CURRENT PLAYER IS PLAYER " + whosTurn);
+    winner();
   });
   $("#PASSbtn").click(function() {
     sumPts();
     changeTurn();
-    console.log("CURRENT PLAYER IS PLAYER " + whosTurn);
+    winner();
   });
+  $("#ReStartbtn").click(function() {
+    curPtsVar = 0;
+    plr1PtsTotal = 0;
+    plr2PtsTotal = 0;
+    whosTurn = 1;
+    $(".CurPts").text(curPtsVar);
+    $(".plr1").text(plr1PtsTotal);
+    $(".plr2").text(plr1PtsTotal);
+    $(".gameDisplay").show();
+    $(".restart").hide();
+    $(".turnP1").show();
+    $(".turnP2").hide();
 
-
-
-
-
+  });
 });

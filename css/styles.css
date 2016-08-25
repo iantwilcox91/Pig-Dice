@@ -6,15 +6,22 @@
   border: solid;
   margin: 20px;
 }
-img{
+.diceImg{
   width: 60%;
+}
+.pigWinner{
+  width: 70%;
 }
 .col-sm-4{
   text-align: center;
 }
-.turnP1{
-  /*display: none;*/
-}
 .turnP2{
-  /*display: none;*/
+  display: none;
+}
+.restart {
+  display: none;
+  text-align: center;
+}
+#ReStartbtn {
+  margin: 30px;
 }
