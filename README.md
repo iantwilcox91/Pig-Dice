@@ -9,10 +9,6 @@ _this is a simple web page where you can play the Pig-Dice game._
 ## Setup/Installation Requirements
 
 *if you direct a web browser to https://iantwilcox91.github.io/Pig-Dice/ you can access the page.
-*if you 
-
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
-
 
 
 # Behavior Driven Development
